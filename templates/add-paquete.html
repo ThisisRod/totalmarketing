@@ -1,0 +1,14 @@
+<!-- templates/add_paquete.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Añadir Paquete - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <h1>Añadir Paquete</h1>
+    <form method="post" action="{% url 'add_paquete' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Añadir">
+    </form>
+{% endblock %}
