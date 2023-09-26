@@ -10,10 +10,14 @@ urlpatterns = [
     path('editar_perfil/', views.editar_perfil, name='editar_perfil'),
 ]
 
+# urls.py del proyecto
+
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('nombre_de_tu_app.urls')),  # Asegúrate de cambiar 'nombre_de_tu_app' al nombre real de tu aplicación Django.
+    path('auth/', include('django.contrib.auth.urls')),  # Incluye las URLs de autenticación
+    path('', include('totalmarketing_entrega.urls')),  
+    
 ]

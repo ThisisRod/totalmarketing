@@ -1,0 +1,22 @@
+<!-- registration/login.html -->
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+{% endblock %}
+
+
+<!-- base_generic.html -->
+
+{% if user.is_authenticated %}
+  <p>Welcome, {{ user.username }}!</p>
+  <a href="{% url 'logout' %}">Logout</a>
+{% else %}
+  <a href="{% url 'login' %}">Login</a>
+{% endif %}

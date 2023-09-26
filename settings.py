@@ -13,3 +13,12 @@ TEMPLATES = [
         # ...
     },
 ]
+
+# settings.py
+
+INSTALLED_APPS = [
+    # ...
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    # ...
+]
